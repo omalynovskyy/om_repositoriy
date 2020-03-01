@@ -3,14 +3,14 @@ package lesson03;
 import java.util.Arrays;
 
 public class Fibonacci {
-   //nt n;
 
+    public static void printFibonacciNumbers(int n){
 
-    public static int[] printFibonacciNumbers(int n){
+        if(n<=0){
+            System.out.printf("printFibonacciNumbers(%d) -> \"Please enter a positive number more than 0\"%n",n);
+        } else {
         int first = 0, last=1, i=0;
-        int[] numbers;
-
-        numbers = new int[n];
+        int[] numbers =new int[n];
         switch (n){
             case 1:
                 numbers[i] = 0;
@@ -33,7 +33,9 @@ public class Fibonacci {
                             i++;
                 }
                 }
-                return numbers;
+       System.out.printf("printFibonacciNumbers(%d) -> %s%n",n, Arrays.toString(numbers));
+        
+        }
 
 
         }
@@ -41,12 +43,9 @@ public class Fibonacci {
     public static void main(String[] args) {
         int size=-1, top = 10;
         while(size <= top){
-            if (size <= 0){
-                System.out.printf("printFibonacciNumbers(%d) -> \"Please enter a positive number more than 0\"%n", size);
-            }else {
-                System.out.printf("printFibonacciNumbers(%d) -> %s%n",size, Arrays.toString(printFibonacciNumbers(size)));
-            }
+            printFibonacciNumbers(size);
             size++;
         }
-    }
+        }
+
 }
